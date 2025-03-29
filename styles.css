@@ -1,0 +1,75 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #fffecae0;
+}
+
+#display {
+    width: 500px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    font-size: 30px;
+}
+
+#inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+    margin: 30px auto;
+}
+
+#digits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.digit {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(52, 100%, 95%);
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+}
+
+#operators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    max-width: 250px;
+    margin: 0 auto;
+}
+.operator {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(52, 100%, 95%);
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+}
