@@ -44,26 +44,39 @@ decimalButton.addEventListener('click', function() {
 operatorButtons.forEach(button => {
     button.addEventListener('click', function() {
         if (display.textContent !== '') {
-            num1 = parseFloat(display.textContent);
-            operator = button.textContent;
-            display.textContent = '';
+            if (num1 === undefined) {
+                // If num1 is not set, set it to the current display value
+                num1 = parseFloat(display.textContent);
+            } else if (operator !== undefined) {
+                // If num1 and operator are already set, calculate the result
+                num2 = parseFloat(display.textContent);
+                let result = operate(num1, num2, operator);
+                display.textContent = result; // Display the result
+                num1 = result; // Use the result as the new num1
+            }
+            operator = button.textContent; // Set the new operator
+            display.textContent = ''; // Clear the display for the next input
         }
     });
 });
 
 equalButton.addEventListener('click', function(event) {
-    if (displayingResult === false)
-    {
-        num2 = parseFloat(display.textContent);
+    if (displayingResult === false) {
+        if (display.textContent === "") {
+            num2 = 0;
+        } else {
+            num2 = parseFloat(display.textContent);
+        }
+
         let result = operate(num1, num2, operator);
-        if (result === null) {
+        if (result === null || result === undefined || isNaN(result)) {
             display.textContent = "Error";
         } else {
             display.textContent = result;
         }
 
-        num1 = 0;
-        num2 = 0;
+        num1 = undefined;
+        num2 = undefined;
         operator = "+";
 
         displayingResult = true;

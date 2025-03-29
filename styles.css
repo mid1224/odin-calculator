@@ -1,3 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fffecae0;
+}
+
 #container {
     display: flex;
     flex-direction: column;
@@ -7,7 +14,14 @@
     background-color: #fffecae0;
 }
 
+#title {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
 #display {
+    font-weight: bold;
     width: 500px;
     height: 50px;
     background-color: #f0f0f0;
@@ -38,6 +52,8 @@
 }
 
 .digit {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     width: 50px;
     height: 50px;
     background-color: hsl(52, 100%, 95%);
@@ -61,6 +77,8 @@
     margin: 0 auto;
 }
 .operator {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     width: 50px;
     height: 50px;
     background-color: hsl(52, 100%, 95%);
@@ -72,4 +90,31 @@
     cursor: pointer;
     transition: background-color 0.3s;
     margin: 10px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    #container {
+        height: auto;
+        padding: 20px;
+    }
+
+    #display {
+        width: 90%; /* Make the display take up most of the screen width */
+        font-size: 20px; /* Reduce font size for smaller screens */
+        height: 40px; /* Adjust height */
+    }
+
+    .digit, .operator {
+        width: 40px; /* Reduce button size */
+        height: 40px;
+        font-size: 16px; /* Adjust font size */
+        margin: 3px; /* Reduce spacing between buttons */
+    }
+
+    #digits, #operators {
+        max-width: 100%; /* Allow buttons to wrap and fit the screen */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
